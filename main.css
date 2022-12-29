@@ -35,7 +35,7 @@ section {
     min-height: 10rem;
 }
 
-.req-query button {
+.req-query-all button, .req-query button {
     margin-top: 1rem;
 }
 

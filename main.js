@@ -1,5 +1,6 @@
 // const url = 'https://nodejs-mysql-restapi-production-a396.up.railway.app/api/employees'
 const url = 'https://nodejs-emp-rest-api.onrender.com/api/employees'
+const reloadUrl = 'https://nodejs-emp-rest-api.onrender.com/api/reload'
 
 
 // GET ALL EMPLOYEES
@@ -260,6 +261,47 @@ deleteEmployee_form.addEventListener('submit', function (evt) {
             setTimeout(() => {
                 deleteEmployee_loader.style.display = 'none'
                 deleteEmployee_res.style.display = 'block'
+            }, 1500);
+        })
+})
+
+
+// RELOAD EMPLOYEES
+
+const reloadEmployees_btn = document.getElementById('reloadEmployees_btn')
+const reloadEmployees_res = document.getElementById('reloadEmployees_res')
+const reloadEmployees_loader = document.getElementById('reloadEmployees_loader')
+
+reloadEmployees_btn.addEventListener('click', () => {
+    reloadEmployees_res.style.display = 'none'
+    reloadEmployees_loader.style.display = 'flex'
+
+    axios.get(reloadUrl)
+        .then(response => {
+            let h3Elem = document.createElement('h3')
+            h3Elem.appendChild(document.createTextNode('Response:'))
+
+            let res = response.data
+            let pElem = document.createElement('p')
+            pElem.appendChild(document.createTextNode(`${res.message}`))
+
+            reloadEmployees_res.innerHTML = ''
+            reloadEmployees_res.appendChild(h3Elem)
+            reloadEmployees_res.appendChild(pElem)
+
+            setTimeout(() => {
+                reloadEmployees_loader.style.display = 'none'
+                reloadEmployees_res.style.display = 'block'
+            }, 1500);
+            
+        })
+        .catch(error => {
+            reloadEmployees_res.innerHTML = ''
+            reloadEmployees_res.appendChild(buildError(error.response.data))
+
+            setTimeout(() => {
+                reloadEmployees_loader.style.display = 'none'
+                reloadEmployees_res.style.display = 'block'
             }, 1500);
         })
 })
