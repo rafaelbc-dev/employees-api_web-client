@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>REST API Web Client with Javascript - Rafael BC</title>
+</head>
+<body>
+
+    <header>
+        <h1>Send API Requests to NodeJs employees REST API with Javascript and Axios-HTTP</h1>
+    </header>
+    
+    
+
+    <section>
+
+        <div class="request">
+            <div class="req-query-all">
+                <h3>Get all employees:</h3>
+                <button id="allEmployees_btn">Send request</button>
+            </div>
+            <div id="allEmployees_res" class="req-data-all scroll" style="display: block;"></div>
+            <div id="allEmployees_loader" class="loader" style="display: none;">
+                <svg viewBox="25 25 50 50">
+                    <circle r="20" cy="50" cx="50"></circle>
+                  </svg>
+            </div>
+        </div>
+
+        <div class="request">
+            <div class="req-query">
+                <h3>Get one employee:</h3>
+                <form id="getEmployee_form" method="post">
+                    <input id="getEmployee_id" type="text" placeholder="Id" required>
+                    <br>
+                    <br>
+                    <input type="submit" value="Send request">
+                </form>
+            </div>
+
+            <div id="getEmployee_res" class="req-data" style="display: block;"></div>
+            <div id="getEmployee_loader" class="loader" style="display: none;">
+                <svg viewBox="25 25 50 50">
+                    <circle r="20" cy="50" cx="50"></circle>
+                  </svg>
+            </div>
+        </div>
+
+        <div class="request">
+            <div class="req-query">
+                <h3>Add an employee:</h3>
+                <form id="postEmployee_form" method="post">
+                    <input id="postEmployee_name" type="text" placeholder="Name" required>
+                    <input id="postEmployee_email" type="text" placeholder="Email" required>
+                    <input id="postEmployee_salary" type="text" placeholder="Salary" required>
+                    <br>
+                    <br>
+                    <input type="submit" value="Send request">
+                </form>
+            </div>
+            <div id="postEmployee_res" class="req-data"></div>
+            <div id="postEmployee_loader" class="loader" style="display: none;">
+                <svg viewBox="25 25 50 50">
+                    <circle r="20" cy="50" cx="50"></circle>
+                  </svg>
+            </div>
+        </div>
+
+        <div class="request">
+            <div class="req-query">
+                <h3>Update an employee:</h3>
+                <form id="updateEmployee_form" method="post">
+                    <input id="updateEmployee_id" type="text" placeholder="Id" required>
+                    <input id="updateEmployee_name" type="text" placeholder="Name">
+                    <input id="updateEmployee_email" type="text" placeholder="Email">
+                    <input id="updateEmployee_salary" type="text" placeholder="Salary">
+                    <br>
+                    <br>
+                    <input type="submit" value="Send request">
+                </form>
+            </div>
+            <div id="updateEmployee_res" class="req-data"></div>
+            <div id="updateEmployee_loader" class="loader" style="display: none;">
+                <svg viewBox="25 25 50 50">
+                    <circle r="20" cy="50" cx="50"></circle>
+                  </svg>
+            </div>
+        </div>
+
+        <div class="request">
+            <div class="req-query">
+                <h3>Delete an employee:</h3>
+                <form id="deleteEmployee_form" method="post">
+                    <input id="deleteEmployee_id" type="text" placeholder="Id" required>
+                    <br>
+                    <br>
+                    <input type="submit" value="Send request">
+                </form>
+            </div>
+            <div id="deleteEmployee_res" class="req-data"></div>
+            <div id="deleteEmployee_loader" class="loader" style="display: none;">
+                <svg viewBox="25 25 50 50">
+                    <circle r="20" cy="50" cx="50"></circle>
+                  </svg>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>2022 - Built by: Rafael BC using Axios-HTTP</h3>
+    </footer>
+
+
+    <!-- AXIOS import from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Javascript file import -->
+    <script src="main.js" type="module"></script>
+
+</body>
+</html>

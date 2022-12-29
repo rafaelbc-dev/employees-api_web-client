@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    background-color: lightseagreen;
+}
+
+header {
+    margin: 3rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #f66b6b;
+    text-shadow: 1px 1px black;
+}
+
+section {
+    margin: 1rem;
+}
+
+.request {
+    display: flex;
+    border: .2rem solid black;
+    border-radius: .2rem;
+    margin-bottom: 2rem;
+}
+
+.req-query-all {
+    width: 50%;
+    padding: 1rem;
+}
+
+.req-query {
+    width: 50%;
+    padding: 1rem;
+    min-height: 10rem;
+}
+
+.req-query button {
+    margin-top: 1rem;
+}
+
+.req-query input {
+    margin: 0 0 .5rem .5rem;
+}
+
+.req-data-all {
+    width: 50%;
+    border-left: 1px solid black;
+    height: 10rem;
+}
+
+.req-data {
+    width: 50%;
+    border-left: 1px solid black;
+}
+
+.scroll {
+    overflow: scroll;
+}
+
+.req-data h3, .req-data p {
+    margin-left: 1rem;
+}
+
+footer {
+    background-color: #005c51;
+    color: aliceblue;
+    padding: 2rem;
+    text-shadow: 1px 1px black;
+
+}
+
+@media (max-width: 26em) {
+    .request {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .req-query-all, .req-query {
+        width: 100%;
+    }
+
+    .req-data-all, .req-data {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid black;
+    }
+}
+
+/* LOADER */
+
+.loader {
+    width: 50%;
+    border-left: 1px solid black;
+}
+
+@media (max-width: 26em) {
+    .loader {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid black;
+    }
+}
+
+/* From uiverse.io by @barisdogansutcu */
+svg {
+    width: 2em;
+    height: 10rem;
+    display: block;
+    margin: 0 auto;
+    transform-origin: center;
+    animation: rotate4 2s linear infinite;
+   }
+   
+   circle {
+    fill: none;
+    stroke: hsl(214, 97%, 59%);
+    stroke-width: 2;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash4 1.5s ease-in-out infinite;
+   }
+   
+   @keyframes rotate4 {
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+   
+   @keyframes dash4 {
+    0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+    }
+   
+    50% {
+     stroke-dasharray: 90, 200;
+     stroke-dashoffset: -35px;
+    }
+   
+    100% {
+     stroke-dashoffset: -125px;
+    }
+   }
